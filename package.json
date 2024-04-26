@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node run.js",
     "test": "jest run.js",
-    "build": "echo 'No build steps required'" ,
+    "build": "echo 'No build steps required'",
     "analyze": "echo 'analyzing'"
   },
   "dependencies": {
@@ -32,6 +32,7 @@
     "node": ">=12.10.0"
   },
   "devDependencies": {
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "jsdoc": "^4.0.2"
   }
 }
