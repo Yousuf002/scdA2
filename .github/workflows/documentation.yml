@@ -14,15 +14,10 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install dependencies
-      run: |
-        # Install documentation tool and dependencies
-        # Example commands for MkDocs
-        pip install mkdocs mkdocs-material
+      run: npm install --save-dev documentation-generation-tool
 
     - name: Build documentation
-      run: |
-        # Build documentation using MkDocs
-        mkdocs build --clean
+      run: npm run documentation-build-command
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
