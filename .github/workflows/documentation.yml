@@ -1,0 +1,31 @@
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main  # Change this to match your main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        # Install documentation tool and dependencies
+        # Example commands for MkDocs
+        pip install mkdocs mkdocs-material
+
+    - name: Build documentation
+      run: |
+        # Build documentation using MkDocs
+        mkdocs build --clean
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./site  # Change this to match the directory containing your built HTML files
