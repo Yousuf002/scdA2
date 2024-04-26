@@ -1,0 +1,25 @@
+name: Generate Release Notes
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  generate-release-notes:
+    name: Generate Release Notes
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Fetch commit messages
+        id: fetch-commits
+        run: |
+          PREVIOUS_TAG=$(git describe --tags $(git rev-list --tags --max-count=2 | tail -n 1))
+          CURRENT_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
+          git log --pretty=format:"- %s" ${PREVIOUS_TAG}..${CURRENT_TAG} > release-notes.txt
+
+      - name: Display release notes
+        run: cat release-notes.txt
+
