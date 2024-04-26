@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node run.js",
     "test": "jest run.js",
-    "build": "hey my app is building"
+    "build": "echo 'No build steps required'" 
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
