@@ -33,6 +33,6 @@ jobs:
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: build
+        FOLDER: public
 
     # Add other relevant steps like code coverage checks, security scans, etc.
