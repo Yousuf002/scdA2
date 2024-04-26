@@ -1,4 +1,4 @@
-name: Continuous Integration and Deployment
+name: Continuous Integration
 
 on:
   push:
@@ -28,11 +28,6 @@ jobs:
     - name: Build the application
       run: npm run build
 
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@4.1.5
-      with:
-        ACCESS_TOKEN: ${{secrets.TOKEN}}
-        BRANCH: gh-pages
-        FOLDER: public
+   
 
     # Add other relevant steps like code coverage checks, security scans, etc.
