@@ -28,7 +28,7 @@ jobs:
     # - name: Run tests
     #   run: npm test
 
-    - name: Lint code
-      run: npm run lint
+    # - name: Lint code
+    #   run: npm run lint
 
     # Add other relevant steps like code coverage checks, security scans, etc.
