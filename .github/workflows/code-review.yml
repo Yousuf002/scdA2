@@ -38,7 +38,7 @@ jobs:
       run: npm ci
 
     - name: Analyze code quality metrics
-      run: npm run analyze-metrics  # Replace with your code analysis command
+      run: npm run analyze  
 
   security-scan:
     name: Security Scan
